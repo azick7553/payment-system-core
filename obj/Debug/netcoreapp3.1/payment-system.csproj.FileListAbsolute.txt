@@ -1,0 +1,12 @@
+/Users/azizjon/Projects/payment-system/bin/Debug/netcoreapp3.1/payment-system.deps.json
+/Users/azizjon/Projects/payment-system/bin/Debug/netcoreapp3.1/payment-system.runtimeconfig.json
+/Users/azizjon/Projects/payment-system/bin/Debug/netcoreapp3.1/payment-system.runtimeconfig.dev.json
+/Users/azizjon/Projects/payment-system/bin/Debug/netcoreapp3.1/payment-system.dll
+/Users/azizjon/Projects/payment-system/bin/Debug/netcoreapp3.1/payment-system.pdb
+/Users/azizjon/Projects/payment-system/obj/Debug/netcoreapp3.1/payment-system.csprojAssemblyReference.cache
+/Users/azizjon/Projects/payment-system/obj/Debug/netcoreapp3.1/payment-system.csproj.CoreCompileInputs.cache
+/Users/azizjon/Projects/payment-system/obj/Debug/netcoreapp3.1/payment-system.AssemblyInfoInputs.cache
+/Users/azizjon/Projects/payment-system/obj/Debug/netcoreapp3.1/payment-system.AssemblyInfo.cs
+/Users/azizjon/Projects/payment-system/obj/Debug/netcoreapp3.1/payment-system.dll
+/Users/azizjon/Projects/payment-system/obj/Debug/netcoreapp3.1/payment-system.pdb
+/Users/azizjon/Projects/payment-system/obj/Debug/netcoreapp3.1/payment-system.genruntimeconfig.cache
