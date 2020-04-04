@@ -9,48 +9,11 @@ namespace payment_system
         static Customer[] CustArr;
         static void Main(string[] args)
         {
-            // Account acc1 = new Account() { Id = 1, AccountNumber = new Random().Next(1, 1000).ToString() };
-            // Account acc2 = new Account() { Id = 2, AccountNumber = new Random().Next(1, 1000).ToString() };
-            // Account acc3 = new Account() { Id = 3, AccountNumber = new Random().Next(1, 1000).ToString() };
-            // Currency currTjs = new Currency()
-            // {
-            //     Id = 1,
-            //     ShortName = "TJS"
-            // };
-            // Currency currUSD = new Currency()
-            // {
-            //     Id = 2,
-            //     ShortName = "USD"
-            // };
-
-            // acc1.AccountCurrency = currTjs;
-            // acc2.AccountCurrency = currTjs;
-            // acc3.AccountCurrency = currUSD;
-
-            // Customer cust1 = new Customer()
-            // {
-            //     Id = 1,
-            //     LastName = "Test",
-            //     FirstName = "Test",
-            //     MiddleName = "Test",
-            //     Accounts = new Account[] { acc1, acc2, acc3 }
-            // };
-
-            // if (cust1.Accounts != null)
-            // {
-            //     foreach (var custAccounts in cust1.Accounts)
-            //     {
-            //         System.Console.WriteLine($"Номер счета: {custAccounts.AccountNumber}\nВалюта счета:{custAccounts.AccountCurrency.ShortName}");
-            //     }
-            // }
-            // else
-            // {
-            //     System.Console.WriteLine("У клиента нету счетов!!!");
-            // }
+            MyStaticClass.ShowDateTimeByCustomFormat("dd/MM/yyyy");
+            MyStaticClass.MyStaticField = "myStatic";
             bool working = true;
             while (working)
             {
-
                 System.Console.Write("\n1.Создать счёт\n2.Список клиентов\n5.Выход\t\nChoice:");
                 string choice = Console.ReadLine();
                 switch (choice)
@@ -67,7 +30,6 @@ namespace payment_system
                                 CustArr = new Customer[0];
                                 CustArr = CreateCustomer();
                             }
-                            var x = "";
                         }; break;
 
                     case "2": ShowCustomers(); break;
@@ -122,9 +84,9 @@ namespace payment_system
                 FirstName = firtName,
                 MiddleName = middleName
             };
-            var tempList = CustArr.ToList();
-            tempList.Add(tempCustomer);
-            return tempList.ToArray();
+            var tempList = CustArr.ToList();//Convert ot List for adding new object
+            tempList.Add(tempCustomer);//add new object into list
+            return tempList.ToArray();//retrun List converted to Array
         }
     }
     /// <summary>
@@ -133,6 +95,7 @@ namespace payment_system
     class Account
     {
         public int Id { get; set; }
+        public int CustId { get; set; }
         public string AccountNumber { get; set; }
         public Currency AccountCurrency { get; set; }
         public decimal AccountBalance { get; set; }
@@ -175,9 +138,57 @@ namespace payment_system
     class PaymentHistory
     {
         public int Id { get; set; }
+        public int AcccountNumber { get; set; }
         public Currency PaymentCurrenct { get; set; }
         public decimal PaymantAmount { get; set; }
     }
 
+    static class MyStaticClass
+    {
+        public static string MyStaticField { get; set; }
+
+        public static void ShowDateTimeByCustomFormat(string format)
+        {
+            System.Console.WriteLine(DateTime.Now.ToString(format));
+        }
+    }
 
 }
+// Account acc1 = new Account() { Id = 1, AccountNumber = new Random().Next(1, 1000).ToString() };
+// Account acc2 = new Account() { Id = 2, AccountNumber = new Random().Next(1, 1000).ToString() };
+// Account acc3 = new Account() { Id = 3, AccountNumber = new Random().Next(1, 1000).ToString() };
+// Currency currTjs = new Currency()
+// {
+//     Id = 1,
+//     ShortName = "TJS"
+// };
+// Currency currUSD = new Currency()
+// {
+//     Id = 2,
+//     ShortName = "USD"
+// };
+
+// acc1.AccountCurrency = currTjs;
+// acc2.AccountCurrency = currTjs;
+// acc3.AccountCurrency = currUSD;
+
+// Customer cust1 = new Customer()
+// {
+//     Id = 1,
+//     LastName = "Test",
+//     FirstName = "Test",
+//     MiddleName = "Test",
+//     Accounts = new Account[] { acc1, acc2, acc3 }
+// };
+
+// if (cust1.Accounts != null)
+// {
+//     foreach (var custAccounts in cust1.Accounts)
+//     {
+//         System.Console.WriteLine($"Номер счета: {custAccounts.AccountNumber}\nВалюта счета:{custAccounts.AccountCurrency.ShortName}");
+//     }
+// }
+// else
+// {
+//     System.Console.WriteLine("У клиента нету счетов!!!");
+// }
